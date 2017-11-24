@@ -160,7 +160,7 @@ class CheckNestedFields(LuceneTreeVisitorV2):
             self.visit(child, parents + [node], context)
 
     def _recurse_nested_fields(self, node, context, parents):
-        names = node.name.split(".")
+        names = [node.name] # node.name.split(".")
         nested_fields = context["nested_fields"]
         current_field = context["current_field"]
         for name in names:
